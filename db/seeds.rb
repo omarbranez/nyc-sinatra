@@ -1,31 +1,20 @@
 landmarks_list = {
-    "Madison Square Guarden" => {
-      :year_completed => 1901
+    "BQE" => {
+      :figure_id => 1,
+      :year_completed => 1947
     },
-    "The big bull outside" => {
-      :year_completed => 1995
+    "Holland Tunnel" => {
+      :figure_id => 5,
+      :year_completed => 1927
     },
-    "Flatiron School" => {
-      :year_completed => 2014
+    "Wall Street Wall" => {
+      :figure_id => 4,
+      :year_completed => 1684
     },
-    "Museum Mile" => {
-      :year_completed => 1058
-    },
-    "Subway Station" => {
-      :year_completed => 2015
-    },
-    "Cast Iron" => {
-      :year_completed => 1951
-    },
-    "Shea Stadium" => {
-      :year_completed => 1964
-    },
-    "Flatiron Building" => {
-      :year_completed => 1902
-    },
-    "Brooklyn Bridge" => {
-      :year_completed => 1883
-    }
+    "Brooklyn Battery Tunnel" => {
+      :figure_id => 10,
+      :year_completed => 1973
+    }  
   }
 
 landmarks_list.each do |name, landmark_hash|
@@ -38,13 +27,25 @@ landmarks_list.each do |name, landmark_hash|
 end
 
 figure_list = {
-    "Billy The Kid" => {
+    "Robert Moses" => {
     },
-    "Mark Zuckerberg" => {
+    "Al Smith" => {
     },
-    "Ada Lovelace" => {
+    "Theodore Roosevelt" => {
     },
-    "Linus Torvalds" => { 
+    "Peter Stuyvesant" => { 
+    },
+    "Boss Tweed" => {
+    },
+    "Michael Bloomberg" => {
+    },
+    "Ed Koch" => {
+    },
+    "Fiorello LaGuardia" => {
+    },
+    "Jimmy Walker" => {
+    },
+    "Belle Moskowitz" => {
     }
   }
 
@@ -56,11 +57,13 @@ end
 
 
 title_list = {
-    "The Mayor" => {
+    "Mayor" => {
     },
-    "The Don" => {
+    "President" => {
     },
-    "Mr. President" => {
+    "Governor" => {
+    },
+    "NYC Parks commissioner" => {
     }
   }
 
@@ -68,4 +71,30 @@ title_list.each do |name, figure_hash|
   p = Title.new
   p.name = name
   p.save
+end
+
+figure_title_list = {
+  3 => {
+    :figure_id => 2
+  },
+  3 => {
+    :figure_id => 3
+  },
+  2 => {
+    :figure_id => 3
+  },
+  1 => {
+    :figure_id => 9
+  },
+  4 => {
+    :figure_id => 1
+  }
+}
+
+figure_title_list.each do |title_id, figure_title_hash|
+  p = title_id
+  figure_title_hash.each do |attribute, value|
+    p[attribute] = value
+    p.save
+  end
 end
